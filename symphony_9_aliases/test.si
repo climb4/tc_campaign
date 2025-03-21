@@ -10,7 +10,7 @@ def check_output($scratch_space: [Int], tick: Int, inputs: [Int], outputs: [Int]
     switch tick
         0 {
 
-            if get_register_value(0) != 10 {
+            if get_register_value(1) != 10 {
                 set_error(`The first instruction is supposed to move the input value (10) to r1.`)
                 return fail
             }
@@ -18,7 +18,7 @@ def check_output($scratch_space: [Int], tick: Int, inputs: [Int], outputs: [Int]
         }
         1 {
 
-            if get_register_value(1) != 10 {
+            if get_register_value(2) != 10 {
                 set_error(`The first instruction is supposed to move the input value (10) to r2.`)
                 return fail
             }
@@ -26,15 +26,15 @@ def check_output($scratch_space: [Int], tick: Int, inputs: [Int], outputs: [Int]
         }
         2 {
 
-            if get_register_value(1) != 65526 {
-                set_error(`Negate r2 and store the result (65526) in r2.`)
+            if get_register_value(3) != 65526 {
+                set_error(`Negate r2 and store the result (65526) in r3.`)
                 return fail
             }
 
         }
         3 {
 
-            if get_register_value(1) != 9 {
+            if get_register_value(4) != 65525 {
                 set_error(`NOT r2 and store the result (9) in r2.`)
                 return fail
             }
